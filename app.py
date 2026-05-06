@@ -15,7 +15,7 @@ st.set_page_config(page_title="ONCF | Scanner BL", page_icon="🚆", layout="cen
 API_KEY = "AIzaSyBfmryF5dRnwFLtMSJJknFPF3d4Ky_SDzo" 
 # ------------------------------
 
-GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={API_KEY}"
+GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key={API_KEY}"
 
 PROMPT = """You are an expert OCR for ONCF "Bordereau de Livraison" documents.
 Return ONLY valid JSON, no markdown. Missing=null. quantity must be JSON number.
