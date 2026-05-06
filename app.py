@@ -44,8 +44,8 @@ def extract_data(base64_image):
     response = requests.post(GEMINI_URL, json=payload, headers={"Content-Type": "application/json"})
     if response.status_code == 200:
         raw_text = response.json()["candidates"][0]["content"]["parts"][0]["text"]
-        clean_json = raw_text.strip().lstrip("```json").lstrip("
-```").rstrip("```").strip()
+        # هادا هو السطر لي تصلح
+        clean_json = raw_text.strip().replace("```json", "").replace("```", "").strip()
         return json.loads(clean_json)
     else:
         st.error(f"Erreur API: {response.text}")
